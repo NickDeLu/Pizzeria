@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    PrinterController.fxml
+    Author: Nick De Luca
+    Date: July 30th 2020
+    Description
+    This class implements all the fxml nodes that display the gui of this app
+-->
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+
+<!--Main panel that contains a menu an hbox and a vbox-->
+<VBox id ="pnlMain" alignment ="CENTER" prefWidth ="520" spacing ="20"
+            xmlns:fx ="http://javafx.com/fxml/1" 
+            fx:controller ="delunico.PizzeriaController">
+    <!--The menu bar in this application-->
+    <MenuBar fx:id ="menuBar">
+        <menus>
+            <Menu text ="_File">
+                <items>
+                    <MenuItem text ="_Exit" onAction ="#handleExitAction"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    
+    <Label fx:id ="lblTitle" text ="Pizzeria Assignment"/>
+    <!--Pizza Size box-->
+    <HBox spacing ="20" alignment ="CENTER" >
+       
+        <VBox fx:id ="pnlSize" spacing ="5">
+            <Label fx:id ="lblSize" text ="Pizza Size"/>
+            <fx:define>
+                <ToggleGroup fx:id = "grpSizes"/>
+            </fx:define>
+            <RadioButton fx:id ="optSmall" text ="Small" 
+                   toggleGroup ="$grpSizes"     
+            />
+            <RadioButton fx:id ="optMedium" text ="Medium" 
+                   toggleGroup ="$grpSizes"          
+            />
+            <RadioButton fx:id ="optLarge" text ="Large" 
+                   toggleGroup ="$grpSizes" 
+            />
+            <TextField fx:id ="txfPizzaNum" maxWidth ="Infinity" promptText ="Number of Pizzas"/>
+        </VBox>
+        <!--Toppings Box-->
+        <VBox fx:id ="pnlToppings" spacing ="5">
+            <Label fx:id ="lblToppings" text ="Toppings"/>
+            <CheckBox fx:id ="chkCheese" text ="Cheese" />
+            <CheckBox fx:id ="chkPep" text ="Pepperoni" />
+            <CheckBox fx:id ="chkMush" text ="Mushrooms" />
+            <CheckBox fx:id ="chkOlives" text ="Olives" />
+        </VBox>
+        <!--Drinks Box-->
+        <VBox fx:id ="pnlDrinks" spacing ="5">
+            <Label fx:id ="lblDrinks" text ="Drink"/>
+            <fx:define>
+                <ToggleGroup fx:id ="grpDrinks"/>
+            </fx:define>
+            <RadioButton fx:id ="optCoke" text ="Coke" 
+                   toggleGroup ="$grpDrinks"      
+            />
+            <RadioButton fx:id ="optJuice" text ="Juice" 
+                   toggleGroup ="$grpDrinks"           
+            />
+            <RadioButton fx:id ="optChMilk" text ="Chocolate Milk" 
+                   toggleGroup ="$grpDrinks" 
+            />
+            <TextField fx:id ="txfDrinkNum" maxWidth ="Infinity" promptText ="Number of Drinks"/>
+        </VBox>
+        
+    </HBox>
+    <!--Vbox that contains the textarea for displaying output and 2 buttons-->
+    <VBox alignment ="CENTER" >
+        <Label fx:id ="lblItems" text ="Ordered Items"/>
+        <TextArea fx:id ="txaOrder" maxWidth ="Infinity" prefHeight ="210"/>
+        <HBox fx:id ="pnlButtons" spacing ="10" alignment ="CENTER">
+            <Button fx:id ="btnOk" text ="_OK" prefWidth ="70" onAction ="#makeOrder"/>
+            <Button fx:id ="btnCancel" text ="_Cancel" prefWidth ="70" onAction ="#clearOrder"/>
+        </HBox>
+    </VBox>
+    <!--Loading stylesheet main.css-->
+    <stylesheets>
+        <URL value ="@../delunico.resources/main.css"/>
+    </stylesheets>
+</VBox>

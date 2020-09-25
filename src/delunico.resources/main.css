@@ -1,0 +1,31 @@
+/*
+    main.css
+    Author: Nick De Luca
+    Date: July 30th 2020
+    Description
+    This class defines the css markup of the gui in this application
+*/
+
+/*the design markup for the three vboxs pizzasize, toppings, and drinks*/
+.vbox{
+    -fx-border-style: solid; 
+    -fx-border-width: 2.5px;
+    -fx-padding: 0px 10px 5px 10px;
+}
+/*the bottom padding for labels in the three vboxs*/
+.padBottom{
+    -fx-padding: 0px 0px 15px 0px;
+}
+/*the padding markup designed for the buttons*/
+.padButtons{
+    -fx-padding: 5px 0px 10px 0px;
+}
+/*the design markup for all labels in this application*/
+.label{
+    -fx-font-family: serif;
+    -fx-font-size: 25;
+}
+/*the design markup for all text-areas in this application*/
+.text-area{
+    -fx-font-family: monospaced;
+}
